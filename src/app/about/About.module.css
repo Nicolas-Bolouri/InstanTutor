@@ -1,0 +1,30 @@
+.aboutUsSection {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subTitle {
+  font-size: 2em;
+  color: #444;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}

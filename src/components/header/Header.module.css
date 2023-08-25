@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 60px;
+  background-color: #333;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  gap: 30px;
+  background-color: white;
+}
+
+.button {
+  background-color: #ff8c00;
+  border: 2px solid #ffa54f;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #ffa54f;
+  transform: scale(1.05);
+}
