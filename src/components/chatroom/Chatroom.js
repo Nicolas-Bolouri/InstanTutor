@@ -3,10 +3,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AgoraUIKit from "agora-react-uikit";
+import dynamic from "next/dynamic";
 
 const Chatroom = ({ appId, appCert, channelName }) => {
   const [videoCall, setVideoCall] = useState(true);
   const [token, setToken] = useState(null);
+  const AgoraUIKit = dynamic(() => import("agora-react-uikit"), {
+    ssr: false,
+  });
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -37,9 +41,28 @@ const Chatroom = ({ appId, appCert, channelName }) => {
     return <div>Loading...</div>;
   }
 
+  const videoContainerStyle = {
+    display: "flex",
+    width: "100vw",
+    height: "calc(100vh - 80px)",
+    backgroundColor: "white",
+  };
+
+  const styleProps = {
+    videoMode: {
+      max: "650px",
+      min: "50px",
+    },
+  };
+
   return videoCall ? (
-    <div style={{ display: "flex", width: "100vw", height: "100vh" }}>
-      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
+    <div style={videoContainerStyle}>
+      <AgoraUIKit
+        rtcProps={rtcProps}
+        callbacks={callbacks}
+        layout={1}
+        styleProps={styleProps}
+      />
     </div>
   ) : (
     <h3 onClick={() => setVideoCall(true)}>Start Call</h3>
