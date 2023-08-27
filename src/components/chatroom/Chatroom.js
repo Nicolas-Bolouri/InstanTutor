@@ -4,10 +4,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AgoraUIKit from "agora-react-uikit";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 const Chatroom = ({ appId, appCert, channelName }) => {
   const [videoCall, setVideoCall] = useState(true);
   const [token, setToken] = useState(null);
+  const router = useRouter();
   const AgoraUIKit = dynamic(() => import("agora-react-uikit"), {
     ssr: false,
   });
@@ -31,10 +33,16 @@ const Chatroom = ({ appId, appCert, channelName }) => {
     appId: appId,
     channel: channelName,
     token: token,
+    enableScreensharing: false,
+    layout: 0,
   };
 
   const callbacks = {
-    EndCall: () => setVideoCall(false),
+    EndCall: () => {
+      if (window.confirm("Are you sure you want to exit the call?")) {
+        router.push("/");
+      }
+    },
   };
 
   if (!token) {
@@ -50,9 +58,14 @@ const Chatroom = ({ appId, appCert, channelName }) => {
 
   const styleProps = {
     videoMode: {
-      max: "650px",
-      min: "50px",
+      max: "1000px",
+      min: "40px",
     },
+    localBtnContainer: {
+      backgroundColor: "#333",
+      height: "70px",
+    },
+    theme: "white",
   };
 
   return videoCall ? (
@@ -60,7 +73,6 @@ const Chatroom = ({ appId, appCert, channelName }) => {
       <AgoraUIKit
         rtcProps={rtcProps}
         callbacks={callbacks}
-        layout={1}
         styleProps={styleProps}
       />
     </div>
