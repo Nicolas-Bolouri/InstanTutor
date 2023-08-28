@@ -43,8 +43,21 @@ const Chatroom = ({ appId, appCert, channelName }) => {
     },
   };
 
+  const loadingStyles = {
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "calc(100vh - 80px)",
+    },
+  };
+
   if (!token) {
-    return <div>Waiting for server: loading...</div>;
+    return (
+      <div style={loadingStyles.container}>
+        <div>Waiting for server: loading...</div>
+      </div>
+    );
   }
 
   const videoContainerStyle = {
