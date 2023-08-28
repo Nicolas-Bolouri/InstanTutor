@@ -2,23 +2,21 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AgoraUIKit from "agora-react-uikit";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+
+const AgoraUIKit = dynamic(() => import("agora-react-uikit"), { ssr: false });
 
 const Chatroom = ({ appId, appCert, channelName }) => {
   const [videoCall, setVideoCall] = useState(true);
   const [token, setToken] = useState(null);
   const router = useRouter();
-  const AgoraUIKit = dynamic(() => import("agora-react-uikit"), {
-    ssr: false,
-  });
 
   useEffect(() => {
     const fetchToken = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_TOKEN_ENDPOINT}?appId=${appId}&appCertificate=${appCert}&channelName=${channelName}`
+          `${process.env.NEXT_PUBLIC_TOKEN_ENDPOINT}?appID=${appId}&appCertificate=${appCert}&channelName=${channelName}`
         );
         setToken(response.data.token);
       } catch (error) {
@@ -46,7 +44,7 @@ const Chatroom = ({ appId, appCert, channelName }) => {
   };
 
   if (!token) {
-    return <div>Loading...</div>;
+    return <div>Waiting for server: loading...</div>;
   }
 
   const videoContainerStyle = {
