@@ -26,19 +26,24 @@ InstanTutor connects students and tutors in STEM instantly through video chat. O
 
 ## Deployment 
 
-The app can be found at: www.instantutor.ca
+The app is deployed using Heroku at: www.instantutor.ca
 
 ## Getting Started 
 
-// to be added
+1. **Clone the Repository**
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2. **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3. **Configure**
+    - Update the `.env` file with your server api endpoint and your Agora project keys (www.agora.io)
+
+4. **Run the App**
+    - To run the server:
+    ```bash
+    npm run start server
+    ```
 
