@@ -12,16 +12,21 @@ InstanTutor connects students and tutors in STEM instantly through video chat. O
 
 ## Built With
 
-// to be added
+- NextJs
+- ExpressJs
+- Agora SDK
 
 
 ## History & Awards 
 
-// to be added
+- Developed in 2022 with vanilla JavaScript, HTML, and CSS in the context of the 2022 McGill Code Jam 12 Hackathon
+- Winner of the Matrox Video Multimedia Award for the best use of multimedia against 56 other teams
+- Refactored in 2023 using NextJs, ExpressJs, and deployed on Heroku
 
 
 ## Deployment 
 
+The app can be found at: www.instantutor.ca
 
 ## Getting Started 
 
