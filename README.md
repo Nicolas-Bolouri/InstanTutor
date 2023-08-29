@@ -42,8 +42,18 @@ The app is deployed using Heroku at: www.instantutor.ca
     - Update the `.env` file with your server api endpoint and your Agora project keys (www.agora.io)
 
 4. **Run the App**
-    - To run the server:
+    - First, run the backend server:
     ```bash
-    npm run start server
+    npm run start-server 
+    ```
+    
+     - Second, build the app:
+    ```bash
+    npm run build 
+    ```
+
+      - Third, run the frontend:
+    ```bash
+    npm run start  
     ```
 
