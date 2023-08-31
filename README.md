@@ -26,7 +26,7 @@ InstanTutor connects students and tutors in STEM instantly through video chat. O
 
 ## Deployment 
 
-The app is deployed using Heroku at: www.instantutor.ca
+The app is deployed using Heroku at: https://instantutor-184f552213d8.herokuapp.com/
 
 ## Getting Started 
 
