@@ -26,7 +26,7 @@ InstanTutor connects students and tutors in STEM instantly through video chat. O
 
 ## Deployment 
 
-The app is deployed using OnRender at: https://www.instantutor.ca/
+The app is deployed using OnRender at: https://www.instantutor.ca
 
 ## Getting Started 
 
